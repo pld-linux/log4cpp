@@ -32,6 +32,7 @@ Summary:	Header files for log4cpp
 Summary(pl):	Pliki nag³ówkowe log4cpp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	libstdc++-devel
 
 %description devel
 This package contains the development and header files for log4cpp.
