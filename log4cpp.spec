@@ -1,13 +1,13 @@
 Summary:	Library for flexible logging
 Summary(pl):	Biblioteka do elastycznego logowania
 Name:		log4cpp
-Version:	0.2.8
+Version:	0.3.4b
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	3162d64a8ed6e4c2d5887410a34a27a3
-URL:		http://log4cpp.sourceforge.net/
+Source0:	http://dl.sf.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	8051f012fcc58173e8015710d449457a
+URL:		http://log4cpp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
@@ -68,7 +68,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install  \
 	DESTDIR=$RPM_BUILD_ROOT \
-	docdir=$RPM_BUILD_ROOT
+	docdir=$RPM_BUILD_ROOT/removeit \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
+	
+rm -rf $RPM_BUILD_ROOT/removeit
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,12 +86,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/html*
+%doc doc/html/*.css doc/html/*.png doc/html/*.html doc/html/api
 %attr(755,root,root) %{_bindir}/log4cpp-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
 %{_mandir}/man3/*
+%{_aclocaldir}/*.m4
 
 %files static
 %defattr(644,root,root,755)
