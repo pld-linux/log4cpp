@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	docdir=$RPM_BUILD_ROOT/removeit \
 	mandir=$RPM_BUILD_ROOT%{_mandir}
-	
+
 rm -rf $RPM_BUILD_ROOT/removeit
 
 %clean
