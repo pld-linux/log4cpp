@@ -1,7 +1,5 @@
-# TODO:
-# - pl translations
-#
 Summary:	Library for flexible logging
+Summary(pl):	Biblioteka do elastycznego logowania
 Name:		log4cpp
 Version:	0.2.8
 Release:	1
@@ -13,6 +11,7 @@ URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	doxygen
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -21,21 +20,34 @@ Log4cpp is library of C++ classes for flexible logging to files,
 syslog, IDSA and other destinations. It is modeled after the Log4j
 Java library, staying as close to their API as is reasonable.
 
+%description -l pl
+Log4cpp to biblioteka klas C++ do elastycznego logowania do plików,
+sysloga, IDSA i innych miejsc. Jest tworzona na podstawie biblioteki
+Javy Log4j i pozostaje jak najbli¿ej jej API w granicach rozs±dku.
+
 %package devel
 Summary:	Header files for log4cpp
+Summary(pl):	Pliki nag³ówkowe log4cpp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-Contains development and header files for log4cpp.
+This package contains the development and header files for log4cpp.
+
+%description devel -l pl
+Ten pakiet zawiera pliki nag³ówkowe biblioteki log4cpp.
 
 %package static
-Summary:	Static log4cpp libraries
+Summary:	Static log4cpp library
+Summary(pl):	Statyczna biblioteka log4cpp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Contains static log4cpp libraries.
+This package contains static log4cpp library.
+
+%description static -l pl
+Ten pakiet zawiera statyczn± bibliotekê log4cpp.
 
 %prep
 %setup -q
@@ -61,22 +73,22 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README doc/html*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %{_mandir}/man3/*
-%attr(755,root,root) %{_libdir}/*.so.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*
 %attr(755,root,root) %{_bindir}/log4cpp-config
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/*.la
+%{_libdir}/lib*.la
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/lib*.a
