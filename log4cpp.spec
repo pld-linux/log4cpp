@@ -78,16 +78,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README doc/html*
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%{_mandir}/man3/*
 
 %files devel
 %defattr(644,root,root,755)
+%doc doc/html*
 %attr(755,root,root) %{_bindir}/log4cpp-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
+%{_mandir}/man3/*
 
 %files static
 %defattr(644,root,root,755)
