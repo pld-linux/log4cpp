@@ -1,12 +1,10 @@
 # TODO:
-# - html documentation goes to a terribly wrong place :/
-# - maybe make a bcond not to build docs
 # - pl translations
 #
 Summary:	Library for flexible logging
 Name:		log4cpp
 Version:	0.2.8
-Release:	0.9
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -39,14 +37,6 @@ Requires:	%{name}-devel = %{version}
 %description static
 Contains static log4cpp libraries.
 
-%package doc
-Summary:	Log4cpp documentation
-Group:		Development/Libraries
-Requires:	%{name} = %{version}
-
-%description doc
-Contains log4cpp doxygen HTML documentation and man pages.
-
 %prep
 %setup -q
 
@@ -76,7 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README doc/html*
+%{_mandir}/man3/*
 %attr(755,root,root) %{_libdir}/*.so.*
 
 %files devel
@@ -85,11 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/log4cpp-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/*.la
-
-%files doc
-%defattr(644,root,root,755)
-%doc /html
-%{_mandir}/man3/*
 
 %files static
 %defattr(644,root,root,755)
