@@ -1,0 +1,11 @@
+--- log4cpp-0.3.4b/log4cpp.m4.orig	2002-06-03 23:14:55.000000000 +0200
++++ log4cpp-0.3.4b/log4cpp.m4	2003-12-21 20:04:14.674618656 +0100
+@@ -4,7 +4,7 @@
+ dnl AM_PATH_LOG4CPP([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]]])
+ dnl Test for LOG4CPP, and define LOG4CPP_CFLAGS and LOG4CPP_LIBS
+ dnl
+-AC_DEFUN(AM_PATH_LOG4CPP,
++AC_DEFUN([AM_PATH_LOG4CPP],
+ [dnl 
+ dnl Get the cflags and libraries from the log4cpp-config script
+ dnl
