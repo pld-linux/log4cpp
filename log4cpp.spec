@@ -5,7 +5,7 @@ Version:	0.3.4b
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://dl.sf.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	8051f012fcc58173e8015710d449457a
 URL:		http://log4cpp.sf.net/
 BuildRequires:	autoconf
