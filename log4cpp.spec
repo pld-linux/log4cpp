@@ -5,7 +5,7 @@ Version:	0.3.4b
 Release:	2
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	8051f012fcc58173e8015710d449457a
 Patch0:		%{name}-am18.patch
 Patch1:		%{name}-nolibs.patch
@@ -31,7 +31,7 @@ Javy Log4j i pozostaje jak najbli¿ej jej API w granicach rozs±dku.
 Summary:	Header files for log4cpp
 Summary(pl):	Pliki nag³ówkowe log4cpp
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
 
 %description devel
@@ -44,7 +44,7 @@ Ten pakiet zawiera pliki nag³ówkowe biblioteki log4cpp.
 Summary:	Static log4cpp library
 Summary(pl):	Statyczna biblioteka log4cpp
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains static log4cpp library.
