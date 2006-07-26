@@ -9,7 +9,7 @@ Source0:	http://dl.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	8051f012fcc58173e8015710d449457a
 Patch0:		%{name}-am18.patch
 Patch1:		%{name}-nolibs.patch
-URL:		http://log4cpp.sf.net/
+URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	doxygen
