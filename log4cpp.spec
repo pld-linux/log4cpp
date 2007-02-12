@@ -1,5 +1,5 @@
 Summary:	Library for flexible logging
-Summary(pl):	Biblioteka do elastycznego logowania
+Summary(pl.UTF-8):   Biblioteka do elastycznego logowania
 Name:		log4cpp
 Version:	0.3.4b
 Release:	2
@@ -22,14 +22,14 @@ Log4cpp is library of C++ classes for flexible logging to files,
 syslog, IDSA and other destinations. It is modeled after the Log4j
 Java library, staying as close to their API as is reasonable.
 
-%description -l pl
-Log4cpp to biblioteka klas C++ do elastycznego logowania do plików,
+%description -l pl.UTF-8
+Log4cpp to biblioteka klas C++ do elastycznego logowania do plikÃ³w,
 sysloga, IDSA i innych miejsc. Jest tworzona na podstawie biblioteki
-Javy Log4j i pozostaje jak najbli¿ej jej API w granicach rozs±dku.
+Javy Log4j i pozostaje jak najbliÅ¼ej jej API w granicach rozsÄ…dku.
 
 %package devel
 Summary:	Header files for log4cpp
-Summary(pl):	Pliki nag³ówkowe log4cpp
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe log4cpp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -37,20 +37,20 @@ Requires:	libstdc++-devel
 %description devel
 This package contains the development and header files for log4cpp.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe biblioteki log4cpp.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe biblioteki log4cpp.
 
 %package static
 Summary:	Static log4cpp library
-Summary(pl):	Statyczna biblioteka log4cpp
+Summary(pl.UTF-8):   Statyczna biblioteka log4cpp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains static log4cpp library.
 
-%description static -l pl
-Ten pakiet zawiera statyczn± bibliotekê log4cpp.
+%description static -l pl.UTF-8
+Ten pakiet zawiera statycznÄ… bibliotekÄ™ log4cpp.
 
 %prep
 %setup -q
