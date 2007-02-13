@@ -1,5 +1,5 @@
 Summary:	Library for flexible logging
-Summary(pl.UTF-8):   Biblioteka do elastycznego logowania
+Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
 Version:	0.3.4b
 Release:	2
@@ -29,7 +29,7 @@ Javy Log4j i pozostaje jak najbliżej jej API w granicach rozsądku.
 
 %package devel
 Summary:	Header files for log4cpp
-Summary(pl.UTF-8):   Pliki nagłówkowe log4cpp
+Summary(pl.UTF-8):	Pliki nagłówkowe log4cpp
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -42,7 +42,7 @@ Ten pakiet zawiera pliki nagłówkowe biblioteki log4cpp.
 
 %package static
 Summary:	Static log4cpp library
-Summary(pl.UTF-8):   Statyczna biblioteka log4cpp
+Summary(pl.UTF-8):	Statyczna biblioteka log4cpp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
