@@ -87,18 +87,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/liblog4cpp.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liblog4cpp.so.4
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/html/*.css doc/html/*.png doc/html/*.html doc/html/api
+%doc doc/html/default.css doc/html/sflogo.png doc/html/index.html doc/html/api
 %attr(755,root,root) %{_bindir}/log4cpp-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_mandir}/man3/*
-%{_aclocaldir}/*.m4
+%attr(755,root,root) %{_libdir}/liblog4cpp.so
+%{_libdir}/liblog4cpp.la
+%{_includedir}/log4cpp
+%{_mandir}/man3/log4cpp*
+%{_aclocaldir}/log4cpp.m4
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/liblog4cpp.a
