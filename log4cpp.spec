@@ -1,14 +1,13 @@
 Summary:	Library for flexible logging
 Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
-Version:	0.3.4b
-Release:	2
+Version:	1.0
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
-# Source0-md5:	8051f012fcc58173e8015710d449457a
-Patch0:		%{name}-am18.patch
-Patch1:		%{name}-nolibs.patch
+# Source0-md5:	1face50ead0790d1297dfb04bacf273c
+Patch0:		%{name}-nolibs.patch
 URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -55,7 +54,6 @@ Ten pakiet zawiera statyczną bibliotekę log4cpp.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 # extract BB_CHECK_OMNITHREADS and BB_CHECK_PTHREADS missing from m4
 tail -n +4487 aclocal.m4 | head -n 96 > m4/BB_CHECK_THREADS.m4
