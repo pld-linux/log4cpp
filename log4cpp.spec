@@ -86,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_libdir}/liblog4cpp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/liblog4cpp.so.4
 
@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/log4cpp
 %{_mandir}/man3/log4cpp*
 %{_aclocaldir}/log4cpp.m4
+%{_pkgconfigdir}/log4cpp.pc
 
 %files static
 %defattr(644,root,root,755)
