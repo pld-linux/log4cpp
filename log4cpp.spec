@@ -8,6 +8,8 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	1face50ead0790d1297dfb04bacf273c
 Patch0:		%{name}-nolibs.patch
+Patch1:		%{name}-gcc.patch
+Patch2:		%{name}-lt.patch
 URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -54,9 +56,8 @@ Ten pakiet zawiera statyczną bibliotekę log4cpp.
 %prep
 %setup -q
 %patch0 -p1
-
-# extract BB_CHECK_OMNITHREADS and BB_CHECK_PTHREADS missing from m4
-tail -n +4487 aclocal.m4 | head -n 96 > m4/BB_CHECK_THREADS.m4
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -97,7 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liblog4cpp.so
 %{_libdir}/liblog4cpp.la
 %{_includedir}/log4cpp
-%{_mandir}/man3/log4cpp*
+%{_mandir}/man3/log4cpp.3*
+%{_mandir}/man3/log4cpp::*.3*
 %{_aclocaldir}/log4cpp.m4
 %{_pkgconfigdir}/log4cpp.pc
 
