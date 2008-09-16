@@ -1,0 +1,8 @@
+Workaroud for libtool's -nostdlib (used with CXX tag) killing -lpthread normally implied by -pthread
+--- log4cpp-1.0/src/Makefile.am.orig	2007-08-25 11:42:07.000000000 +0200
++++ log4cpp-1.0/src/Makefile.am	2008-09-16 20:09:44.950783123 +0200
+@@ -57,3 +57,4 @@
+ 	AbortAppender.cpp
+ 
+ liblog4cpp_la_LDFLAGS = -version-info @LT_VERSION@
++liblog4cpp_la_LIBADD = -lpthread
