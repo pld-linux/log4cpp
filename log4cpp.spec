@@ -5,7 +5,7 @@ Version:	1.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	1face50ead0790d1297dfb04bacf273c
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-gcc.patch
