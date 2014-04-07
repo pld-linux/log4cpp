@@ -1,15 +1,14 @@
 Summary:	Library for flexible logging
 Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
-Version:	1.0
+Version:	1.1.1
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
-# Source0-md5:	1face50ead0790d1297dfb04bacf273c
+# Source0-md5:	1e173df8ee97205f412ff84aa93b8fbe
 Patch0:		%{name}-nolibs.patch
-Patch1:		%{name}-gcc.patch
-Patch2:		%{name}-lt.patch
+Patch1:		%{name}-lt.patch
 URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -54,10 +53,9 @@ This package contains static log4cpp library.
 Ten pakiet zawiera statyczną bibliotekę log4cpp.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -89,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_libdir}/liblog4cpp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblog4cpp.so.4
+%attr(755,root,root) %ghost %{_libdir}/liblog4cpp.so.5
 
 %files devel
 %defattr(644,root,root,755)
