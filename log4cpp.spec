@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	idsa	# IDS/A logging
+#
 Summary:	Library for flexible logging
 Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
@@ -9,10 +13,12 @@ Source0:	http://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	1e173df8ee97205f412ff84aa93b8fbe
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-lt.patch
+Patch2:		%{name}-idsa.patch
 URL:		http://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	doxygen
+%{?with_idsa:BuildRequires:	idsa-devel}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,6 +62,7 @@ Ten pakiet zawiera statyczną bibliotekę log4cpp.
 %setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -64,7 +71,8 @@ Ten pakiet zawiera statyczną bibliotekę log4cpp.
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-doxygen
+	--enable-doxygen \
+	%{?with_idsa:--with-idsa}
 %{__make}
 
 %install

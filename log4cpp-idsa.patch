@@ -1,0 +1,11 @@
+--- log4cpp/src/PropertyConfiguratorImpl.cpp.orig	2012-08-07 17:19:50.000000000 +0200
++++ log4cpp/src/PropertyConfiguratorImpl.cpp	2014-04-10 22:10:43.438164259 +0200
+@@ -237,7 +237,7 @@
+             // default idsa name ???
+             std::string idsaName = _properties.getString(appenderPrefix + ".idsaName", "foobar");
+ 
+-            appender = new IdsaAppender(appenderName, idsaname);
++            appender = new IdsaAppender(appenderName, idsaName);
+         }
+ #endif	// LOG4CPP_HAVE_LIBIDSA
+ 
