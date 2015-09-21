@@ -6,7 +6,7 @@ Summary:	Library for flexible logging
 Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
 Version:	1.1.1
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
