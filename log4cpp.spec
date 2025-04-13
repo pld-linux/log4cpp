@@ -9,12 +9,12 @@ Version:	1.1.1
 Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
 # Source0-md5:	1e173df8ee97205f412ff84aa93b8fbe
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-lt.patch
 Patch2:		%{name}-idsa.patch
-URL:		http://log4cpp.sourceforge.net/
+URL:		https://log4cpp.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	doxygen
