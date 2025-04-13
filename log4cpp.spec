@@ -5,12 +5,12 @@
 Summary:	Library for flexible logging
 Summary(pl.UTF-8):	Biblioteka do elastycznego logowania
 Name:		log4cpp
-Version:	1.1.1
-Release:	3
+Version:	1.1.4
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://downloads.sourceforge.net/log4cpp/%{name}-%{version}.tar.gz
-# Source0-md5:	1e173df8ee97205f412ff84aa93b8fbe
+# Source0-md5:	d56ef8240014528c354da5b7e93015ca
 Patch0:		%{name}-nolibs.patch
 Patch1:		%{name}-lt.patch
 Patch2:		%{name}-idsa.patch
@@ -83,7 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 	docdir=$RPM_BUILD_ROOT/removeit \
 	mandir=$RPM_BUILD_ROOT%{_mandir}
 
-rm -rf $RPM_BUILD_ROOT/removeit
+%{__rm} -r $RPM_BUILD_ROOT/removeit
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/liblog4cpp.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -102,7 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/html/default.css doc/html/sflogo.png doc/html/index.html doc/html/api
 %attr(755,root,root) %{_bindir}/log4cpp-config
 %attr(755,root,root) %{_libdir}/liblog4cpp.so
-%{_libdir}/liblog4cpp.la
 %{_includedir}/log4cpp
 %{_mandir}/man3/log4cpp.3*
 %{_mandir}/man3/log4cpp::*.3*

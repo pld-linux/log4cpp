@@ -1,13 +1,13 @@
---- log4cpp-0.3.4b/configure.in.orig	2002-10-29 22:40:37.000000000 +0100
-+++ log4cpp-0.3.4b/configure.in	2003-12-21 21:40:15.760800432 +0100
-@@ -69,8 +69,8 @@
- # ----------------------------------------------------------------------------
+--- log4cpp/m4/BB_ENABLE_REMOTE_SYSLOG.m4.orig	2023-03-12 17:46:57.000000000 +0100
++++ log4cpp/m4/BB_ENABLE_REMOTE_SYSLOG.m4	2025-04-13 21:49:00.014472635 +0200
+@@ -4,8 +4,8 @@ AC_ARG_ENABLE(remote-syslog, [  --disabl
  
  # for RemoteSyslogAppender
--AC_CHECK_LIB(socket,socket, LIBS="-lsocket $LIBS",,)
--AC_CHECK_LIB(nsl,gethostbyname, LIBS="-lnsl $LIBS",,)
-+AC_SEARCH_LIBS(socket,socket)
-+AC_SEARCH_LIBS(gethostbyname,nsl)
- 
- # idsa_test
- if test "x$with_idsa" = xyes; then
+ if test "x$enable_remote_syslog" = xyes; then
+-    AC_CHECK_LIB(socket,socket, LIBS="-lsocket $LIBS",,)
+-    AC_CHECK_LIB(nsl,gethostbyname, LIBS="-lnsl $LIBS",,)
++    AC_SEARCH_LIBS(socket,socket)
++    AC_SEARCH_LIBS(gethostbyname,nsl)
+ else
+     AC_DEFINE(DISABLE_REMOTE_SYSLOG,1,[define if RemoteSyslogAppender is disabled])
+ fi
